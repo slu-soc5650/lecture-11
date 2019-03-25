@@ -86,7 +86,7 @@ northCity <- st_read(here("data", "example-data", "STL_REGIONS_NorthCity", "STL_
 
 ``` r
 # tabular data - 2012 murders in St. Louis
-murders <- read_csv(here("data", "example-data", "STL_MURDERS_2012.csv"))
+murders <- read_csv(here("data", "example-data", "STL_CRIME_Murders12.csv"))
 ```
 
     ## Parsed with column specification:
