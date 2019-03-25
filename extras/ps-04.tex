@@ -1,0 +1,53 @@
+\documentclass{tufte-handout}
+
+\usepackage{xcolor}
+
+% set image attributes:
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+
+% set hyperlink attributes
+\hypersetup{colorlinks}
+
+% ======================================================
+
+% define the title
+\title{SOC 4650/5650: PS-04 - Density of Airports in the United States}
+\author{Christopher Prener, Ph.D.}
+\date{Spring 2019}
+
+% ======================================================
+
+\begin{document}
+
+% ======================================================
+
+\maketitle % generates the title
+
+% ======================================================
+
+\vspace{5mm}
+\section{Directions}
+Using data accessed from the \texttt{lecture-11} repository, create the maps below related to the density of airports in the United States. Your entire project folder system, including data and RMarkdown output, should be uploaded to GitHub by \textbf{Monday, April 8\textsuperscript{th}} at 4:15pm.
+
+\vspace{5mm}
+\section{Analysis Development}
+The goal of this section is to create a self contained project directory with all of the data, code, map documents, results, and documentation a project needs. Please ensure \textbf{all} required elements are present. You will the \texttt{.csv} data included in the \texttt{data/ps-04/} subfolder in the \texttt{lecture-11} repository.
+
+\vspace{5mm}
+\section{Part 1: Data Preparation}
+The goal of this section is clean, project, and prepare data for mapping. You will need to create, using \texttt{R}, a data set of counties in the United States that includes the number of \textit{operational}, \textit{public} airports per square kilometer in each county in the United States. Among the cleaning tasks you should consider:
+\begin{itemize}
+\item Subset the data so that non-operational airports (those that are ``closed'' or coded as ``indefinite'')  and private airports (those coded as ``1'') are no longer included.
+\item Reduce the number of columns down to the bare minimum.
+\item Updating any variables names as necessary.
+\end{itemize}
+
+Once the data are cleaned, project them using an appropriate coordinate system, verify the projection worked, and perform the required joins to obtain counts of public, operational airports per county (you will need to download county geometric data using \texttt{tigris}). Finally, calculate the density of airports per square kilometer. Counties without airports should be coded as ``\texttt{0}''. Write these data to a new shapefile.
+
+\vspace{5mm}
+\section{Part 2: Mapping the Density of Airports in the United States.}
+Using ArcGIS Pro, create three maps. They should use the same, appropriate color ramp (either color brewer or viridis). One map should focus on the contiguous United States (the ``lower 48''), one should focus on Alaska, and one should focus on Hawaii. All three maps should be in an appropriate projection for the extent being mapped. Once all three maps are created, create a single map layout that combines these three maps and contains all expected map layout elements.
+
+% ======================================================
+\end{document}

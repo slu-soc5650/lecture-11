@@ -1,0 +1,63 @@
+\documentclass{tufte-handout}
+
+\usepackage{xcolor}
+
+% set image attributes:
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+
+% set hyperlink attributes
+\hypersetup{colorlinks}
+
+% ======================================================
+
+% define the title
+\title{SOC 4650/5650: Lab-10 - Density of Public Schools in Missouri}
+\author{Christopher Prener, Ph.D.}
+\date{Spring 2019}
+
+% ======================================================
+
+\begin{document}
+
+% ======================================================
+
+\maketitle % generates the title
+
+% ======================================================
+
+\vspace{5mm}
+\section{Directions}
+Using data accessed from the \texttt{lecture-11} repository, create the maps below related to the density of public school locations in Missouri. Your entire project folder system, including data and RMarkdown output, should be uploaded to GitHub by \textbf{Monday, April 1\textsuperscript{st}} at 4:15pm.
+
+\vspace{5mm}
+\section{Analysis Development}
+The goal of this section is to create a self contained project directory with all of the data, code, map documents, results, and documentation a project needs. Please ensure \textbf{all} required elements are present. You will need both shapefiles included in the \texttt{data/lab-10/} subfolder in the \texttt{lecture-11} repository.
+
+\vspace{5mm}
+\section{Part 1: Data Preparation}
+The goal of this section is add a county identifier to each school and then aggregate schools by that county identifier. A subset of data for the City of St. Louis will also be created.
+
+\begin{enumerate}
+\item Using \texttt{R}, complete the following steps:
+\begin{enumerate}
+\item Import the K-12 schools point data into \texttt{R} along with the county data.
+\item Ensure that both the K-12 schools data and the county data are in the \textit{same}, \textit{appropriate} coordinate system for mapping state-wide data in Missouri.
+\item Construct a spatial join that \textit{identifies} the county each school is located in (be sure that the other variables from the county data are removed after the join).
+\item Select schools in the City of St. Louis, subset them, and write this subset to a new shapefile.
+\item Construct a second spatial join that aggregates schools in all counties in Missouri and combines them with the original county data so that you have a shapefile with six columns - \texttt{GEOID}, \texttt{NAMELSAD}, \texttt{SQKM}, \texttt{TOTALPOP}, a variable containing the count of schools per county, and the \texttt{geometry} column. Write this new object to a new shapefile.
+\end{enumerate}
+\end{enumerate}
+
+\vspace{5mm}
+\section{Part 2: Mapping the Density of Schools in Missouri}
+Using the tool of your choice (i.e. \texttt{ggplot2} or \texttt{tmap} in \texttt{R} or ArcGIS Pro), create two quick maps. They should use an appropriate color ramp (either color brewer or viridis) and have a title and legend (so we know which map is which) but otherwise can lack the usual design features we expect in problem sets. If you use ArcGIS, you'll want to create a density variable for schools per 1,000 residents prior to writing the data out of \texttt{R}
+
+\begin{enumerate}
+\setcounter{enumi}{1}
+\item Map the density of schools per square kilometer in each county. 
+\item Map the density of schools per 1,000 residents in each county.
+\end{enumerate}
+
+% ======================================================
+\end{document}
