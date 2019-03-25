@@ -142,3 +142,13 @@ If we want a data set of only homicides for a ceratin area, like north city, *an
 murders_nc <- st_intersection(murders_sf, northCity) %>%
   filter(region == "North City")
 ```
+
+
+
+
+```{r move-to-docs, include=FALSE}
+# you do need to include this in any notebook you create for this class
+fs::file_copy(here::here("examples", "lecture-11-complete.nb.html"), 
+              here::here("docs", "index.nb.html"), 
+              overwrite = TRUE)
+```
